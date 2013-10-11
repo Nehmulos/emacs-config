@@ -12,3 +12,6 @@
 
 ;; lines on the left
 (load-file "~/.emacs.d/linum.el")
+(linum-mode)
+
+(load-file "~/.emacs.d/rust-mode.el")
