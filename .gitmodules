@@ -1,3 +1,6 @@
 [submodule "oblivion-emacs"]
 	path = oblivion-emacs
 	url = https://github.com/pomeo/oblivion-emacs.git
+[submodule "twittering-mode"]
+	path = twittering-mode
+	url = https://github.com/hayamiz/twittering-mode.git

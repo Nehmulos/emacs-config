@@ -15,6 +15,9 @@
 (load-file "~/.emacs.d/linum.el")
 (linum-mode)
 
+(load-file "~/.emacs.d/twittering-mode/twittering-mode.el")
+(setq twittering-use-master-password t)
+
 (load-file "~/.emacs.d/rust-mode.el")
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
