@@ -1,6 +1,7 @@
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 (setq c-basic-offset 4)
+(require 'iso-transl)
 
 ;; oblivion theme custom added
 ;;(load-file "~/.emacs.d/load-directory.el")
