@@ -1,7 +1,14 @@
-(setq tab-width 4)
 (setq indent-tabs-mode nil)
+(setq tab-width 4)
+(setq custom-buffer-indent 4)
 (setq c-basic-offset 4)
+(setq inhibit-startup-screen t)
+(setq blink-cursor-interval 0)
 (require 'iso-transl)
+
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 
 ;; oblivion theme custom added
 ;;(load-file "~/.emacs.d/load-directory.el")
@@ -15,6 +22,7 @@
 ;; lines on the left
 (load-file "~/.emacs.d/linum.el")
 (linum-mode)
+(global-linum-mode)
 
 (load-file "~/.emacs.d/twittering-mode/twittering-mode.el")
 (setq twittering-use-master-password t)
