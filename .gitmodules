@@ -4,3 +4,6 @@
 [submodule "twittering-mode"]
 	path = twittering-mode
 	url = https://github.com/hayamiz/twittering-mode.git
+[submodule "multiple-cursors.el"]
+	path = multiple-cursors.el
+	url = https://github.com/magnars/multiple-cursors.el.git
