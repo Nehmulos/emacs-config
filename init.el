@@ -1,5 +1,5 @@
-(setq indent-tabs-mode nil)
 (setq tab-width 4)
+(setq indent-tabs-mode nil)
 (setq custom-buffer-indent 4)
 (setq c-basic-offset 4)
 (setq inhibit-startup-screen t)
@@ -28,6 +28,8 @@
 (setq twittering-use-master-password t)
 
 (load-file "~/.emacs.d/rust-mode.el")
+(load-file "~/.emacs.d/eval-and-replace.el")
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
