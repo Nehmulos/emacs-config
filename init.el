@@ -2,6 +2,7 @@
 (setq indent-tabs-mode nil)
 (setq custom-buffer-indent 4)
 (setq c-basic-offset 4)
+(setq-default tab-width 4)
 (setq inhibit-startup-screen t)
 (setq blink-cursor-interval 0)
 (require 'iso-transl)
