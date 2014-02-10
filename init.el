@@ -18,12 +18,10 @@
 
 
 ;; oblivion theme custom added
-;;(load-file "~/.emacs.d/load-directory.el")
-;;(require 'load-directory)
-;;(load-directory "~/.emacs.d/oblivion-emacs")
+;;(load-file "~/.emacs.d/oblivion-emacs/color-theme.el")
 ;;(load-file "~/.emacs.d/oblivion-emacs/color-theme-oblivion.el")
-(load-file "~/.emacs.d/oblivion-emacs/color-theme.el")
-(load-file "~/.emacs.d/oblivion-emacs/color-theme-oblivion.el")
+(add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
+(require 'color-theme-oblivion)
 (color-theme-oblivion)
 
 ;; lines on the left
