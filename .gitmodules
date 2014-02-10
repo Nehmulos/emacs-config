@@ -7,3 +7,6 @@
 [submodule "multiple-cursors.el"]
 	path = multiple-cursors.el
 	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule "js2-mode"]
+	path = js2-mode
+	url = https://github.com/mooz/js2-mode.git
