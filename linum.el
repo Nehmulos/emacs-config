@@ -136,10 +136,10 @@ and you have to scroll or press C-l to update the numbers."
         (limit (window-end win t))
         (fmt (cond ((stringp linum-format) linum-format)
                    ((eq linum-format 'dynamic)
-                    (let ((w (length (number-to-string
-                                      (count-lines (point-min) (point-max))))))
+                    (let ((w (max 3 (length (number-to-string
+                                      (count-lines (point-min) (point-max)))))))
                       (concat "%" (number-to-string w) "d")))))
-        (width 0))
+        (width 3))
     (run-hooks 'linum-before-numbering-hook)
     ;; Create an overlay (or reuse an existing one) for each
     ;; line visible in this window, if necessary.
