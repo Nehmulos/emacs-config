@@ -1,3 +1,9 @@
+;; TODO use load-path and require for everything
+(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/dict")
+(ac-config-default)
+
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 (setq custom-buffer-indent 4)
