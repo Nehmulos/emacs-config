@@ -4,6 +4,9 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/dict")
 (ac-config-default)
 
+(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
+(require 'multiple-cursors)
+
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 (setq custom-buffer-indent 4)
