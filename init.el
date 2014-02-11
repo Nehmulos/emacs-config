@@ -1,4 +1,15 @@
-;; TODO use load-path and require for everything
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
+(setq custom-buffer-indent 4)
+(setq c-basic-offset 4)
+(setq-default tab-width 4)
+(setq inhibit-startup-screen t)
+(setq blink-cursor-interval 0)
+(require 'iso-transl)
+
+;; includes
+(add-to-list 'load-path "~/.emacs.d")
+
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/dict")
@@ -9,38 +20,29 @@
 
 (add-to-list 'load-path "~/.emacs.d/js2-mode")
 (require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; disabled, since it's validation is pretty slow
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-(setq tab-width 4)
-(setq indent-tabs-mode nil)
-(setq custom-buffer-indent 4)
-(setq c-basic-offset 4)
-(setq-default tab-width 4)
-(setq inhibit-startup-screen t)
-(setq blink-cursor-interval 0)
-(require 'iso-transl)
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
-
-
-;; oblivion theme custom added
-;;(load-file "~/.emacs.d/oblivion-emacs/color-theme.el")
-;;(load-file "~/.emacs.d/oblivion-emacs/color-theme-oblivion.el")
 (add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
 (require 'color-theme-oblivion)
 (color-theme-oblivion)
 
-;; lines on the left
 (load-file "~/.emacs.d/linum.el")
 (linum-mode)
 (global-linum-mode)
 
-(load-file "~/.emacs.d/twittering-mode/twittering-mode.el")
+(add-to-list 'load-path "~/.emacs.d/twittering-mode")
+(require 'twittering-mode)
 (setq twittering-use-master-password t)
 
-(load-file "~/.emacs.d/rust-mode.el")
+(require 'rust-mode)
 (load-file "~/.emacs.d/eval-and-replace.el")
+(load-file "~/.emacs.d/pretty-xml.el")
+
+
+
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -57,20 +59,3 @@
 
 ;; hotkeys
 (global-set-key (kbd "M-\"") 'insert-pair)
-
-
-;; TODO MOVE INTO NEW FILE
-(defun bf-pretty-print-xml-region (begin end)
-  "Pretty format XML markup in region. You need to have nxml-mode
-http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
-this.  The function inserts linebreaks to separate tags that have
-nothing but whitespace between them.  It then indents the markup
-by using nxml's indentation rules."
-  (interactive "r")
-  (save-excursion
-    (nxml-mode)
-    (goto-char begin)
-    (while (search-forward-regexp "\>[ \\t]*\<" nil t)
-      (backward-char) (insert "\n"))
-    (indent-region begin end))
-  (message "Ah, much better!"))
