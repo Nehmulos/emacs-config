@@ -57,6 +57,7 @@
 
 ;; hotkeys
 (global-set-key (kbd "M-\"") 'insert-pair)
+(global-set-key (kbd "C-c o") 'ff-find-other-file)
 
 
 ;; TODO MOVE INTO NEW FILE
