@@ -23,9 +23,11 @@
 ;; disabled, since it's validation is pretty slow
 ;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-(add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
-(require 'color-theme-oblivion)
-(color-theme-oblivion)
+(if window-system
+    (progn
+       (add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
+       (require 'color-theme-oblivion)
+       (color-theme-oblivion)))
 
 (load-file "~/.emacs.d/linum.el")
 (linum-mode)
