@@ -7,6 +7,12 @@
 (setq blink-cursor-interval 0)
 (require 'iso-transl)
 
+;; remove whitespace before save. This is going to fuckup something I know it.
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
 
@@ -40,9 +46,6 @@
 (require 'rust-mode)
 (load-file "~/.emacs.d/eval-and-replace.el")
 (load-file "~/.emacs.d/pretty-xml.el")
-
-;; remove whitespace before save. This is going to fuckup something I know it.
-(add-hook 'before-save-hook 'whitespace-cleanup)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
