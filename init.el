@@ -13,6 +13,22 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; me lisp now
+(let ((lastState (frame-parameter nil 'fullscreen)))
+  (defun toggle-fullscreen ()
+    "Toggle full screen on X11"
+    (interactive)
+    (when (eq window-system 'x)
+      (set-frame-parameter
+       nil 'fullscreen
+       (let ((state (frame-parameter nil 'fullscreen)))
+         (if (not (string= state 'fullboth))
+             (progn (set 'lastState state) (print state) 'fullboth)
+             'fullboth
+           lastState))))))
+
+(global-set-key [f11] 'toggle-fullscreen)
+
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
 
