@@ -23,7 +23,7 @@
        nil 'fullscreen
        (let ((state (frame-parameter nil 'fullscreen)))
          (if (not (string= state 'fullboth))
-             (progn (set 'lastState state) (print state) 'fullboth)
+             (progn (set 'lastState state) 'fullboth)
              'fullboth
            lastState))))))
 
