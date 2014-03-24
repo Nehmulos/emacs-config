@@ -41,7 +41,8 @@
 (load-file "~/.emacs.d/eval-and-replace.el")
 (load-file "~/.emacs.d/pretty-xml.el")
 
-
+;; remove whitespace before save. This is going to fuckup something I know it.
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
