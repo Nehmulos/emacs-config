@@ -4,7 +4,8 @@
 (setq c-basic-offset 4)
 (setq-default tab-width 4)
 (setq inhibit-startup-screen t)
-(setq blink-cursor-interval 0)
+(setq default-cursor-type '(bar . 1))
+;;(setq blink-cursor-interval 0.)
 (require 'iso-transl)
 
 ;; remove whitespace before save. This is going to fuckup something I know it.
