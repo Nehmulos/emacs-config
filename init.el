@@ -30,6 +30,10 @@
 
 (global-set-key [f11] 'toggle-fullscreen)
 
+(setq show-paren-delay 0.04)         ; how long to wait?
+(show-paren-mode t)                  ; turn paren-mode on
+(setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
+
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
 
