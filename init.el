@@ -28,6 +28,27 @@
              'fullboth
            lastState))))))
 
+;; special chars for mac keyboards
+(if (eq system-type 'darwin)
+    (if (eq window-system 'mac)
+        (progn
+          (setq mac-keyboard-text-encoding kTextEncodingISOLatin1)
+          ;; Workaround for not having Latin-9 Fonts
+          (latin1-display 'latin-9))
+      (if (eq window-system 'nil)
+          (progn
+            ;; "fix" the broken keyboard
+            (global-set-key "\M-l" '(lambda () (interactive) (insert "@")))
+            (global-set-key "\M-5" '(lambda () (interactive) (insert "[")))
+            (global-set-key "\M-6" '(lambda () (interactive) (insert "]")))
+            (global-set-key "\M-7" '(lambda () (interactive) (insert "|")))
+            (global-set-key "\M-/" '(lambda () (interactive) (insert "\\")))
+            (global-set-key "\M-8" '(lambda () (interactive) (insert "{")))
+            (global-set-key "\M-9" '(lambda () (interactive) (insert "}")))
+            (global-set-key "\M-n" '(lambda () (interactive) (insert "~")))
+            ))))
+
+
 (global-set-key [f11] 'toggle-fullscreen)
 
 (setq show-paren-delay 0.04)         ; how long to wait?
