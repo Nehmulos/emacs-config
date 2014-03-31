@@ -10,3 +10,6 @@
 [submodule "js2-mode"]
 	path = js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "expand-region.el"]
+	path = expand-region.el
+	url = https://github.com/magnars/expand-region.el.git

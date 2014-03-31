@@ -86,6 +86,10 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
+(Add-to-list 'load-path "~/.emacs.d/expand-region.el")
+(require 'expand-region)
+(global-set-key (kbd "C-j") 'er/expand-region)
+
 (require 'rust-mode)
 (load-file "~/.emacs.d/eval-and-replace.el")
 (load-file "~/.emacs.d/pretty-xml.el")
