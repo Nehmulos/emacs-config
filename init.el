@@ -17,7 +17,6 @@
 ;; me lisp now
 (let ((lastState (frame-parameter nil 'fullscreen)))
   (defun toggle-fullscreen ()
-    "Toggle full screen on X11"
     (interactive)
     (when (eq window-system 'x)
       (set-frame-parameter
@@ -54,6 +53,8 @@
 (setq show-paren-delay 0.04)         ; how long to wait?
 (show-paren-mode t)                  ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
+
+(setq backup-directory-alist `(("." . "~/.emacs.d/tmpsaves")))
 
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
