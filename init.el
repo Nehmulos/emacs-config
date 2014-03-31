@@ -10,6 +10,9 @@
 
 ;; remove whitespace before save. This is going to fuckup something I know it.
 (add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -20,11 +23,11 @@
     (interactive)
     (when (eq window-system 'x)
       (set-frame-parameter
-       nil 'fullscreen
+       nil
+       'fullscreen
        (let ((state (frame-parameter nil 'fullscreen)))
          (if (not (string= state 'fullboth))
              (progn (set 'lastState state) 'fullboth)
-             'fullboth
            lastState))))))
 
 ;; special chars for mac keyboards
@@ -44,8 +47,8 @@
             (global-set-key "\M-/" '(lambda () (interactive) (insert "\\")))
             (global-set-key "\M-8" '(lambda () (interactive) (insert "{")))
             (global-set-key "\M-9" '(lambda () (interactive) (insert "}")))
-            (global-set-key "\M-n" '(lambda () (interactive) (insert "~")))
-            ))))
+            (global-set-key "\M-n" '(lambda () (interactive) (insert "~"))))
+        )))
 
 
 (global-set-key [f11] 'toggle-fullscreen)
@@ -74,9 +77,9 @@
 
 (if window-system
     (progn
-       (add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
-       (require 'color-theme-oblivion)
-       (color-theme-oblivion)))
+      (add-to-list 'load-path "~/.emacs.d/oblivion-emacs")
+      (require 'color-theme-oblivion)
+      (color-theme-oblivion)))
 
 (load-file "~/.emacs.d/linum.el")
 (linum-mode)
@@ -86,7 +89,7 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
-(Add-to-list 'load-path "~/.emacs.d/expand-region.el")
+(add-to-list 'load-path "~/.emacs.d/expand-region.el")
 (require 'expand-region)
 (global-set-key (kbd "C-j") 'er/expand-region)
 
@@ -98,16 +101,16 @@
 (load custom-file)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;; hotkeys
