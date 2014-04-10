@@ -3,6 +3,7 @@
 (setq custom-buffer-indent 4)
 (setq c-basic-offset 4)
 (setq-default tab-width 4)
+(setq sgml-basic-offset 4)
 (setq inhibit-startup-screen t)
 (setq default-cursor-type '(bar . 1))
 ;;(setq blink-cursor-interval 0.)
