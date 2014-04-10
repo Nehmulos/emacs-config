@@ -87,7 +87,7 @@
 (global-linum-mode)
 
 (load-file "~/.emacs.d/column-marker.el")
-(column-marker-3 80)
+(add-hook 'text-mode-hook (lambda() (column-marker-3 80)))
 
 (add-to-list 'load-path "~/.emacs.d/twittering-mode")
 (require 'twittering-mode)
