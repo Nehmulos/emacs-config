@@ -14,6 +14,8 @@
 (add-hook 'before-save-hook
           (lambda () (if (not indent-tabs-mode)
                          (untabify (point-min) (point-max)))))
+(add-hook 'before-save-hook
+          (lambda () (set-buffer-file-coding-system 'utf-8-unix)))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
