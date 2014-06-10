@@ -6,6 +6,7 @@
 (setq sgml-basic-offset 4)
 (setq inhibit-startup-screen t)
 (setq default-cursor-type '(bar . 1))
+(column-number-mode)
 ;;(setq blink-cursor-interval 0.)
 (require 'iso-transl)
 
