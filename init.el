@@ -104,6 +104,22 @@
 (load-file "~/.emacs.d/eval-and-replace.el")
 (load-file "~/.emacs.d/pretty-xml.el")
 
+;; invoke make if that directory is freshly cloned
+(if (not (file-exists-p "~/.emacs.d/haskell-mode/haskell-mode-autoloads.el"))
+    (progn
+      (cd "~/.emacs.d/haskell-mode/")
+      (call-process-shell-command "make haskell-mode-autoloads.el")))
+
+(add-to-list 'load-path "~/.emacs.d/haskell-mode/")
+(require 'haskell-mode-autoloads)
+(add-to-list 'Info-default-directory-list "~/.emacs.d/haskell-mode/")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
