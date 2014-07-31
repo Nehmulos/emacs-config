@@ -115,6 +115,12 @@
 (add-to-list 'Info-default-directory-list "~/.emacs.d/haskell-mode/")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
+(require 'auto-complete-haskell)
+(add-hook 'haskell-mode-hook
+          '(lambda () (auto-complete-mode 1)
+             (setq ac-sources (cons my/ac-source-haskell ac-sources))
+             nil))
+
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
