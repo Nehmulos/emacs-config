@@ -146,3 +146,4 @@
 (global-set-key (kbd "M-\"") 'insert-pair)
 (global-set-key (kbd "C-c o") 'ff-find-other-file)
 (global-set-key (kbd "C-x C-M-e") 'eval-and-replace)
+(global-set-key (kbd "C-c C-r") 'mc/mark-sgml-tag-pair) ; todo hook to mode
