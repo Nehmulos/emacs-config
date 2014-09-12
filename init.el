@@ -96,6 +96,10 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
+(autoload 'enable-paredit-mode "paredit"
+  "Turn on pseudo-structural editing of Lisp code."
+  t)
+
 (add-to-list 'load-path "~/.emacs.d/expand-region.el")
 (require 'expand-region)
 (global-set-key (kbd "C-j") 'er/expand-region)
