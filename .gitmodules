@@ -16,3 +16,6 @@
 [submodule "haskell-mode"]
 	path = haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
+[submodule "geiser"]
+	path = geiser
+	url = http://git.savannah.gnu.org/r/geiser.git/

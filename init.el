@@ -133,6 +133,8 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 
+(load-file "~/.emacs.d/geiser/elisp/geiser.el")
+
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
