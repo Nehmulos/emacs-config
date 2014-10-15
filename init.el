@@ -51,8 +51,7 @@
             (global-set-key "\M-/" '(lambda () (interactive) (insert "\\")))
             (global-set-key "\M-8" '(lambda () (interactive) (insert "{")))
             (global-set-key "\M-9" '(lambda () (interactive) (insert "}")))
-            (global-set-key "\M-n" '(lambda () (interactive) (insert "~"))))
-        )))
+            (global-set-key "\M-n" '(lambda () (interactive) (insert "~")))))))
 
 
 (global-set-key [f11] 'toggle-fullscreen)
@@ -62,6 +61,11 @@
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/tmpsaves")))
+
+(add-hook 'html-mode-hook
+          (lambda ()
+            (sgml-electric-tag-pair-mode)))
+
 
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
