@@ -22,7 +22,7 @@
 (tool-bar-mode -1)
 
 ;; me lisp now
-(let ((lastState (frame-parameter nil 'fullscreen)))
+(let ((last-state (frame-parameter nil 'fullscreen)))
   (defun toggle-fullscreen ()
     (interactive)
     (when (eq window-system 'x)
@@ -31,8 +31,34 @@
        'fullscreen
        (let ((state (frame-parameter nil 'fullscreen)))
          (if (not (string= state 'fullboth))
-             (progn (set 'lastState state) 'fullboth)
-           lastState))))))
+             (progn (set 'last-state state) 'fullboth)
+           last-state))))))
+
+;; TODO use the give lambda, no idea why it is void
+(defun in-each-file-in-directory (cb)
+  (mapcar (lambda (file)
+            (when (and (not (string= ".." file))
+                       (not (string= "." file))
+                       (not (file-directory-p file)))
+              (progn
+                (find-file file)
+                (ignore-errors
+                  (call-last-kbd-macro))
+                1)))
+          (directory-files ".")))
+
+;; TODO see fn above
+(defun in-each-file-in-directory-call-last-macro ()
+  (interactive)
+  (in-each-file-in-directory '(lambda () (interactive) (call-last-kbd-macro))))
+
+;; might rename
+(defun close-all-buffers-but-this ()
+   (interactive)
+   (let ((tobe-killed (cdr (buffer-list (current-buffer)))))
+     (while tobe-killed
+       (kill-buffer (car tobe-killed))
+       (setq tobe-killed (cdr tobe-killed)))))
 
 ;; special chars for mac keyboards
 (if (eq system-type 'darwin)
@@ -152,8 +178,16 @@
  ;; If there is more than one, they won't work right.
  )
 
+(defun insert-lambda-sign ()
+  (interactive)
+  (insert-string "λ"))
+
 ;; hotkeys
 (global-set-key (kbd "M-\"") 'insert-pair)
 (global-set-key (kbd "C-c o") 'ff-find-other-file)
 (global-set-key (kbd "C-x C-M-e") 'eval-and-replace)
 (global-set-key (kbd "C-c C-r") 'mc/mark-sgml-tag-pair) ; todo hook to mode
+(global-set-key (kbd "C-c C-l") 'insert-lambda-sign)
+(put 'narrow-to-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+(put 'downcase-region 'disabled nil)
