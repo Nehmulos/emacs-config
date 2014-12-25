@@ -25,3 +25,6 @@
 [submodule "popup-el"]
     path = popup-el
     url = https://github.com/auto-complete/popup-el.git
+[submodule "slime"]
+	path = slime
+	url = https://github.com/slime/slime.git
