@@ -11,10 +11,11 @@
 (require 'iso-transl)
 
 ;; remove whitespace before save. This is going to fuckup something I know it.
-(add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook
-          (lambda () (if (not indent-tabs-mode)
-                         (untabify (point-min) (point-max)))))
+          (lambda () (when (not indent-tabs-mode)
+                       (progn
+                         (untabify (point-min) (point-max))
+                         (whitespace-cleanup)))))
 (add-hook 'before-save-hook
           (lambda () (set-buffer-file-coding-system 'utf-8-unix)))
 
