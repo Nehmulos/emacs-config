@@ -1,21 +1,30 @@
 [submodule "oblivion-emacs"]
-	path = oblivion-emacs
-	url = https://github.com/pomeo/oblivion-emacs.git
+    path = oblivion-emacs
+    url = https://github.com/pomeo/oblivion-emacs.git
 [submodule "twittering-mode"]
-	path = twittering-mode
-	url = https://github.com/hayamiz/twittering-mode.git
+    path = twittering-mode
+    url = https://github.com/hayamiz/twittering-mode.git
 [submodule "multiple-cursors.el"]
-	path = multiple-cursors.el
-	url = https://github.com/magnars/multiple-cursors.el.git
+    path = multiple-cursors.el
+    url = https://github.com/magnars/multiple-cursors.el.git
 [submodule "js2-mode"]
-	path = js2-mode
-	url = https://github.com/mooz/js2-mode.git
+    path = js2-mode
+    url = https://github.com/mooz/js2-mode.git
 [submodule "expand-region.el"]
-	path = expand-region.el
-	url = https://github.com/magnars/expand-region.el.git
+    path = expand-region.el
+    url = https://github.com/magnars/expand-region.el.git
 [submodule "haskell-mode"]
-	path = haskell-mode
-	url = https://github.com/haskell/haskell-mode.git
+    path = haskell-mode
+    url = https://github.com/haskell/haskell-mode.git
 [submodule "geiser"]
-	path = geiser
-	url = http://git.savannah.gnu.org/r/geiser.git/
+    path = geiser
+    url = http://git.savannah.gnu.org/r/geiser.git/
+[submodule "auto-complete"]
+    path = auto-complete
+    url = https://github.com/auto-complete/auto-complete.git
+[submodule "popup-el"]
+    path = popup-el
+    url = https://github.com/auto-complete/popup-el.git
+[submodule "slime"]
+	path = slime
+	url = https://github.com/slime/slime.git

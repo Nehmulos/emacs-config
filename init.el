@@ -97,9 +97,10 @@
 ;; includes
 (add-to-list 'load-path "~/.emacs.d")
 
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete-1.3.1/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
 (ac-config-default)
 
 (add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
@@ -161,6 +162,11 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 
 (load-file "~/.emacs.d/geiser/elisp/geiser.el")
+
+(add-to-list 'load-path "~/.emacs.d/slime")
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/bin/env sbcl")
+(setq slime-contribs '(slime-fancy))
 
 
 (setq custom-file "~/.emacs.d/custom.el")
