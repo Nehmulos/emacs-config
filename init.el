@@ -95,7 +95,7 @@
 
 
 ;; includes
-(add-to-list 'load-path "~/.emacs.d")
+;;(add-to-list 'load-path "~/.emacs.d")
 
 (add-to-list 'load-path "~/.emacs.d/popup-el")
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
@@ -136,6 +136,7 @@
 (require 'expand-region)
 (global-set-key (kbd "C-j") 'er/expand-region)
 
+(load-file "~/.emacs.d/rust-mode.el")
 (require 'rust-mode)
 (load-file "~/.emacs.d/eval-and-replace.el")
 (load-file "~/.emacs.d/pretty-xml.el")
@@ -151,6 +152,7 @@
 (add-to-list 'Info-default-directory-list "~/.emacs.d/haskell-mode/")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
+(load-file "~/.emacs.d/auto-complete-haskell.el")
 (require 'auto-complete-haskell)
 (add-hook 'haskell-mode-hook
           '(lambda () (auto-complete-mode 1)
