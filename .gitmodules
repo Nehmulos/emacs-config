@@ -34,3 +34,9 @@
 [submodule "dash.el"]
 	path = dash.el
 	url = https://github.com/magnars/dash.el.git
+[submodule "magit"]
+	path = magit
+	url = https://github.com/magit/magit.git
+[submodule "git-modes"]
+	path = git-modes
+	url = https://github.com/magit/git-modes.git

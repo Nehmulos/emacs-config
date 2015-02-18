@@ -176,6 +176,13 @@
 (require 'projectile)
 (projectile-global-mode)
 
+(add-to-list 'load-path "~/.emacs.d/git-modes")
+(add-to-list 'load-path "~/.emacs.d/magit")
+(eval-after-load 'info
+  '(progn (info-initialize)
+          (add-to-list 'Info-directory-list "~/.emacs.d/magit/")))
+(require 'magit)
+
 
 
 (setq custom-file "~/.emacs.d/custom.el")
