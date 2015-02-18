@@ -28,3 +28,9 @@
 [submodule "slime"]
 	path = slime
 	url = https://github.com/slime/slime.git
+[submodule "projectile"]
+	path = projectile
+	url = https://github.com/bbatsov/projectile.git
+[submodule "dash.el"]
+	path = dash.el
+	url = https://github.com/magnars/dash.el.git

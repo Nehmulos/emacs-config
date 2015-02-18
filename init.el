@@ -170,6 +170,13 @@
 (setq inferior-lisp-program "/usr/bin/env sbcl")
 (setq slime-contribs '(slime-fancy))
 
+(add-to-list 'load-path "~/.emacs.d/dash.el/")
+(require 'dash)
+(add-to-list 'load-path "~/.emacs.d/projectile/")
+(require 'projectile)
+(projectile-global-mode)
+
+
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
