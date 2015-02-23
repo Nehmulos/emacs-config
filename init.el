@@ -183,10 +183,24 @@
           (add-to-list 'Info-directory-list "~/.emacs.d/magit/")))
 (require 'magit)
 
+(add-to-list 'load-path "~/.emacs.d/emms/lisp")
+(require 'emms-setup)
+(require 'emms-browser)
+(emms-standard)
+(emms-default-players)
+(setq emms-browser-default-covers
+       (list "/path/to/cover_small.jpg" nil nil))
 
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
+
+(setq emms-player-started-hook
+      (lambda ()
+        (call-process-shell-command
+         (format "notify-send '%s'"
+                 (cdr (assoc 'name (emms-playlist-current-selected-track)))))))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

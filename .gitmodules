@@ -40,3 +40,6 @@
 [submodule "git-modes"]
 	path = git-modes
 	url = https://github.com/magit/git-modes.git
+[submodule "emms"]
+	path = emms
+	url = http://git.sv.gnu.org/r/emms.git
