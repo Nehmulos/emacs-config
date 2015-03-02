@@ -201,6 +201,20 @@
          (format "notify-send '%s'"
                  (cdr (assoc 'name (emms-playlist-current-selected-track)))))))
 
+;; (defadvice emms-browser-next-mapping-type
+;;   (after no-album (current-mapping))
+;;   (when (eq ad-return-value 'info-album)
+;;     (setq ad-return-value 'info-title)))
+
+(defvar emms-browser-info-title-format "%i%A - %T. %t")
+(defvar emms-browser-playlist-info-title-format
+  emms-browser-info-title-format)
+
+(require 'emms-info-libtag)
+(setq emms-info-functions '(emms-info-libtag))
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
