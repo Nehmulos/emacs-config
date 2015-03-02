@@ -97,6 +97,9 @@
 ;; includes
 ;;(add-to-list 'load-path "~/.emacs.d")
 
+(load-file "~/.emacs.d/nemu.el")
+(require 'nemu)
+
 (add-to-list 'load-path "~/.emacs.d/popup-el")
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
 (require 'auto-complete-config)
