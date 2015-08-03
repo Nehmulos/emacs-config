@@ -110,6 +110,8 @@
 (load-file "~/.emacs.d/nemu.el")
 (require 'nemu)
 
+(load-file "~/.emacs.d/godot-mode.el")
+(require 'godot-mode)
 
 (add-to-list 'load-path "~/.emacs.d/popup-el")
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
@@ -229,7 +231,10 @@
 
 
 
-
+(let ((enable-tab-lambda (lambda ()
+                           (setq indent-tabs-mode t))))
+  (add-hook 'python-mode-hook enable-tab-lambda)
+  (add-hook 'godot-mode-hook enable-tab-lambda))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
