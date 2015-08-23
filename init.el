@@ -128,7 +128,7 @@
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 
-(autoload 'enable-paredit-mode "paredit"
+(autoload 'enable-paredit-mode "~/.emacs.d/paredit.el"
   "Turn on pseudo-structural editing of Lisp code."
   t)
 

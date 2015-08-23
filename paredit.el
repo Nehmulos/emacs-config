@@ -333,7 +333,7 @@ Paredit behaves badly if parentheses are unbalanced, so exercise
                 ("|(defun hello-world ...)"
                  ";;; |\n(defun hello-world ...)"))
 
-   ("C-j"       paredit-newline
+   ("C-<return>"       paredit-newline
                 ("(let ((n (frobbotz))) |(display (+ n 1)\nport))"
                  ,(concat "(let ((n (frobbotz)))"
                           "\n  |(display (+ n 1)"
