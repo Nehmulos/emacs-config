@@ -253,12 +253,32 @@
   (interactive)
   (insert-string "λ"))
 
+(defun replace-stuff (stuff str)
+  (if stuff
+      (let ((pair (car stuff))
+            (rest (cdr stuff)))
+
+        (replace-stuff rest (replace-regexp-in-string (car pair) (cdr pair) str)))
+    str))
+
+(defun insert-ddate ()
+  (interactive)
+  (insert-string
+   (replace-stuff
+    '(("Chaos"       . "1")
+      ("Discord"     . "2")
+      ("Bureaucracy" . "3")
+      ("Aftermath"   . "4")
+      ("\n"         . ""))
+    (shell-command-to-string "ddate +%Y-%B-%d"))))
+
 ;; hotkeys
 (global-set-key (kbd "M-\"") 'insert-pair)
 (global-set-key (kbd "C-c o") 'ff-find-other-file)
 (global-set-key (kbd "C-x C-M-e") 'eval-and-replace)
 (global-set-key (kbd "C-c C-r") 'mc/mark-sgml-tag-pair) ; todo hook to mode
 (global-set-key (kbd "C-c C-l") 'insert-lambda-sign)
+(global-set-key (kbd "C-x C-M-F") 'insert-ddate)
 (global-set-key (kbd "<f7>") 'recompile)
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
