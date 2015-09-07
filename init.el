@@ -259,6 +259,7 @@
 (global-set-key (kbd "C-x C-M-e") 'eval-and-replace)
 (global-set-key (kbd "C-c C-r") 'mc/mark-sgml-tag-pair) ; todo hook to mode
 (global-set-key (kbd "C-c C-l") 'insert-lambda-sign)
+(global-set-key (kbd "<f7>") 'recompile)
 (put 'narrow-to-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'downcase-region 'disabled nil)
