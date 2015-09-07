@@ -199,35 +199,35 @@
           (add-to-list 'Info-directory-list "~/.emacs.d/magit/")))
 (require 'magit)
 
-(add-to-list 'load-path "~/.emacs.d/emms/lisp")
-(require 'emms-setup)
-(require 'emms-browser)
-(emms-standard)
-(emms-default-players)
-(setq emms-browser-default-covers
-       (list "/path/to/cover_small.jpg" nil nil))
+;; (add-to-list 'load-path "~/.emacs.d/emms/lisp")
+;; (require 'emms-setup)
+;; (require 'emms-browser)
+;; (emms-standard)
+;; (emms-default-players)
+;; (setq emms-browser-default-covers
+;;        (list "/path/to/cover_small.jpg" nil nil))
 
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-(setq emms-player-started-hook
-      (lambda ()
-        (call-process-shell-command
-         (format "notify-send '%s'"
-                 (cdr (assoc 'name (emms-playlist-current-selected-track)))))))
+;; (setq emms-player-started-hook
+;;       (lambda ()
+;;         (call-process-shell-command
+;;          (format "notify-send '%s'"
+;;                  (cdr (assoc 'name (emms-playlist-current-selected-track)))))))
 
 ;; (defadvice emms-browser-next-mapping-type
 ;;   (after no-album (current-mapping))
 ;;   (when (eq ad-return-value 'info-album)
 ;;     (setq ad-return-value 'info-title)))
 
-(defvar emms-browser-info-title-format "%i%A - %T. %t")
-(defvar emms-browser-playlist-info-title-format
-  emms-browser-info-title-format)
+;; (defvar emms-browser-info-title-format "%i%A - %T. %t")
+;; (defvar emms-browser-playlist-info-title-format
+;;   emms-browser-info-title-format)
 
-(require 'emms-info-libtag)
-(setq emms-info-functions '(emms-info-libtag))
+;; (require 'emms-info-libtag)
+;; (setq emms-info-functions '(emms-info-libtag))
 
 
 
